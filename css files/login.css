@@ -1,0 +1,146 @@
+body {
+    /* background: linear-gradient(#decba4a0, #3E5151 15%,rgba(22, 22, 22, 0.736) 45%);             */
+    background: linear-gradient(#343434, rgb(20, 20, 20) 100%);
+    margin-left: 5px;
+    width: 95vw;
+    border-radius: 10px;
+    background-attachment: fixed;
+    margin: 0;
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column; */
+}
+
+.navbar {
+    background-color: rgb(16, 16, 16);
+    width: 100vw;
+    color: white;
+    font-size: 25px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 545;
+    padding: 35px 60px;
+}
+
+.content {
+    /* margin: 50px 500px; */
+    margin: 40px 300px 0px 300px;
+    height: 650px;
+    /* width: 850px; */
+    background-color: rgb(16, 16, 16);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Skip this */
+
+/* .content {
+    max-width: 700px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: black;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+
+
+h2 {
+    /* text-align: center;
+    color: white; */
+    color: white;
+    font-size: 37px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+label {
+    font-family: "Roboto", sans-serif;
+    /* margin-top: 10px; */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 400px; /* Adjust width as needed */
+    padding: 10px;
+    margin: 10px auto; /* Center the input boxes horizontally */
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    /* background-color: black; */
+    background-color: rgb(16, 16, 16);
+    color: white;
+    display: block;
+}
+
+input[type="submit"] {
+    width: 200px;
+    padding: 15px;
+    height: 40px;
+    /* text-align: center;
+    justify-content: center; */
+    /* background-color: black; */
+    background-color: #1BE1FF;
+    color: black; /* Changed color to white */
+    border: none;
+    border-radius: 50px;
+    transition: .5s;
+    /*cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; Center the buttons horizontally */
+}
+input[type="submit"]:hover{
+    font-size: 15px;
+    height: 50px;
+    width: 220px;
+}
+
+.social-login-btn {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-left: 180px;
+    width: 400px;
+    padding: 15px;
+    height: 50px;
+    background-color: rgb(16, 16, 16);
+    border: 1.5px solid white;
+    color: white;
+    border-radius: 50px;
+}
+
+.social-login-btn:hover{
+    border: 3px solid white;
+}
+
+.icon {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+.user_pwd {
+    text-align: center; /* Center the form */
+    color: white;
+}
+.icon_img {
+    border-radius: 15px;
+    border-color: white;
+    /* background-color: black; */
+}
+hr {
+    height: 1px filled;
+    width: 100px;
+    background-color: gray;
+}
+/* Change color of password input's hide/show icon */
+input[type="password"]::-webkit-inner-spin-button,
+input[type="password"]::-webkit-outer-spin-button {
+    color: white;
+}

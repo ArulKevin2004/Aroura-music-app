@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aurora</title>
+    <link rel="shortcut icon" type="x-icon" href="images/music-solid.svg" />
+    <link rel="stylesheet" href="css files/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <i class="fa-solid fa-music"></i>
+      Aurora
+    </div>
+    <div class="content">
+      <h2>Log in to Aurora</h2>
+      <div class="icon_img">
+        <button class="social-login-btn">
+          <img class="icon" src="images/google.png" alt="Google Icon" />
+          Continue with Google
+        </button>
+        <button class="social-login-btn">
+          <img class="icon" src="images/facebook.png" alt="Facebook Icon" />
+          Continue with Facebook
+        </button>
+        <button class="social-login-btn">
+          <img class="icon" src="images/apple.png" alt="Apple Icon" /> Continue
+          with Apple
+        </button>
+        <button class="social-login-btn">Continue with phone number</button>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <div class="user_pwd">
+        <form action="your_login_endpoint_here" method="post">
+          <label for="email_username">Email or Username</label>
+          <input
+            type="text"
+            name="email_username"
+            placeholder="Email or Username"
+            required
+          />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <input type="submit" value="Log In" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
