@@ -2,9 +2,9 @@
 // Sample array of Ed Sheeran's songs
 $edSheeranSongs = array(
     "Shape of You",
-    "Castle on the Hill",
+    "I Dont Care",
     "Perfect",
-    "Thinking Out Loud",
+    "Beautiful People",
     "Photograph"
 );
 ?>
@@ -15,13 +15,29 @@ $edSheeranSongs = array(
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ed Sheeran Songs</title>
+    <link rel="stylesheet" src="Aroura-music-app/css files/common.css">
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        .song {
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <h1>Ed Sheeran Songs</h1>
     <ul>
         <?php foreach ($edSheeranSongs as $song) { ?>
             <!-- Clickable song list -->
-            <li><a href="#" onclick="playSong('<?php echo $song; ?>')"><?php echo $song; ?></a></li>
+            <li>
+                <a href="#" onclick="playSong('<?php echo $song; ?>')">
+                    <?php 
+                        echo '<div class="song">'.$song.'</div>'; 
+                    ?>
+                </a>
+            </li>
         <?php } ?>
     </ul>
 
