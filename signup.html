@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aurora</title>
+    <link rel="shortcut icon" type="x-icon" href="images/music-solid.svg" />
+    <link rel="stylesheet" href="css files/login.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+    <script>
+        document.getElementById( "submit" )
+        .addEventListener( "submit", function ( event ) {
+
+            event.preventDefault();
+
+            if ( validateForm() ) {
+                this.submit();
+            } 
+            else {
+                return false;
+            }
+        } );
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("cpassword").value;
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            // Check password criteria
+            var regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+            if (!regex.test(password)) {
+                alert("Password must be at least 8 characters long, must contain at least one special character, one digit, and start with an alphabet.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <i class="fa-solid fa-music"></i>
+        Aurora
+    </div>
+    <div class="content">
+        <h2>Sign Up</h2>
+        <div class="user_pwd">
+            <form id="signupForm" action="signup.php" method="post" onsubmit="return validateForm()">
+                <label for="email_username">Email or Username</label>
+                <input type="text" name="email_username" id="email_username" placeholder="Email or Username" required />
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password" required />
+                <label for="cpassword">Confirm Password</label>
+                <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password" required />
+                <button id="submit">Sign up</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
