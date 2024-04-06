@@ -1,5 +1,4 @@
 <?php
-// Sample array of Ed Sheeran's songs
 $anirudhSongs = array(
     "Badass",
     "Hayyoda",
@@ -36,7 +35,7 @@ $anirudhSongs = array(
         }
     
         .list > button{
-            width: 1300px;
+            width: 1250px;
             font-size: 20px; 
             text-align: left;
             margin: 0px;
@@ -58,13 +57,18 @@ $anirudhSongs = array(
         }
     
         .eds_page {
-            background: linear-gradient(#141e30,#243b55,rgba(22, 22, 22, 0.736) 70%);
+            /* background: linear-gradient(#FDB931 ,rgba(22, 22, 22, 0.736) 70%); */
+            background: linear-gradient(#fdb931bd ,rgba(22, 22, 22, 0.736) 70%);
             margin-left: 5px;
             width: 95vw;
             border-radius: 10px;
             background-attachment: fixed;
         }
     
+        .second {
+            height: 1200px;
+        }
+
         img {
             height: 300px;
             border-radius: 20px;
@@ -78,6 +82,10 @@ $anirudhSongs = array(
         p {
             color: grey;
             margin-bottom: 20px;
+        }
+
+        h4 {
+            color: rgb(166, 166, 166);
         }
     </style>
 </head>
@@ -107,9 +115,12 @@ $anirudhSongs = array(
             </div>
             <div class="content">
                 <h1>Anirudh Ravichander</h1>
-                <img src="images/anirudh(1).jpg">
-                    <p><b>Anirudh Ravichander</b> (born 16 October 1990), also credited mononymously as Anirudh, is an Indian music composer and playback singer who works primarily in Tamil Cinema. He has also composed music for few Hindi and Telugu films. He has won two Filmfare Awards South, nine SIIMA Awards, six Edison Awards and five Vijay Awards.
+                <h4>Anirudh Ravichander has made a significant impact on the Tamil music industry, introducing fresh and innovative sounds while maintaining commercial success.
+He is celebrated for his ability to blend various musical styles seamlessly, earning him a dedicated fan base and widespread acclaim.</h4>
+                <p><b>Anirudh Ravichander</b> (born 16 October 1990), also credited mononymously as Anirudh, is an Indian music composer and playback singer who works primarily in Tamil Cinema. He has also composed music for few Hindi and Telugu films. He has won two Filmfare Awards South, nine SIIMA Awards, six Edison Awards and five Vijay Awards.
 His debut song "Why This Kolaveri Di", composed for the 2012 film 3, went viral across the globe and has achieved over 400 million views on YouTube.</p>
+                <img src="images/anirudh(1).jpg">
+                    <p>Genre: Film music, Pop, Electronic<br>Instruments: Vocals, Keyboard, Guitar<br>Labels: Sony Music India<br>Years Active: 2011–present<br>Filmfare Awards: Several wins and nominations<br>Edison Awards: Multiple wins and nominations<br>Mirchi Music Awards: Recognized for Best Music Director and Best Male Vocalist awards</p>
                     <hr>
                     <?php foreach ($anirudhSongs as $song) { ?>
                         <div class="list">

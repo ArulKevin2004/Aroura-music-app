@@ -1,5 +1,4 @@
 <?php
-// Sample array of Ed Sheeran's songs
 $edSheeranSongs = array(
     "Shape of You",
     "I Dont Care",
@@ -22,7 +21,6 @@ $edSheeranSongs = array(
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <style>
-    
         body {
             color: white;
         }
@@ -32,11 +30,11 @@ $edSheeranSongs = array(
         }
     
         img {
-            margin-bottom: 100px;
+            margin-bottom: 20px;
         }
     
         .list > button{
-            width: 1300px;
+            width: 1250px;
             font-size: 20px; 
             text-align: left;
             margin: 0px;
@@ -64,6 +62,10 @@ $edSheeranSongs = array(
             border-radius: 10px;
             background-attachment: fixed;
         }
+
+        .second {
+            height: 1200px;
+        }
     
         img {
             height: 300px;
@@ -71,10 +73,18 @@ $edSheeranSongs = array(
         }
     
         .content {
-            margin : 40px;
+            margin: 40px;
             font-family: "Roboto", sans-serif;
         }
-    
+        
+        p {
+            color: grey;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            color: rgb(166, 166, 166);
+        }
     </style>
 </head>
 <body>
@@ -103,7 +113,13 @@ $edSheeranSongs = array(
             </div>
             <div class="content">
                 <h1>Ed Sheeran</h1>
+                <h4>Ed Sheeran's music has had a significant impact on the pop music landscape, with his soulful voice, heartfelt lyrics, and relatable songs resonating with audiences worldwide.
+He is regarded as one of the most successful and influential artists of his generation, leaving a lasting legacy in the music industry.</h4>
+                <p><b>Edward Christopher Sheeran</b> MBE (born 17 February 1991) is an English singer-songwriter. Born in Halifax, West Yorkshire, and raised in Framlingham, Suffolk, he began writing songs around the age of eleven. In early 2011, Sheeran independently released the extended play No. 5 Collaborations Project. He signed with Asylum Records the same year.
+
+Sheeran's debut album, + ("Plus"), was released in September 2011 and topped the UK Albums Chart. It contained his first hit single "The A Team".</p>
                 <img src="images/ed_sheeran(1).jpg">
+                    <p>Genre: Pop, Folk, R&B<br>Instruments: Vocals, Guitar, Piano<br>Labels: Atlantic Records, Asylum Records<br>Years Active: 2004–present<br>Grammy Awards: Multiple wins and nominations<br>Brit Awards: Multiple wins and nominations<br>Guinness World Records: Several records, including longest climb to number one on the UK singles chart with "Shape of You"<br>Best-Selling Music Artist: Globally recognized as one of the best-selling music artists, with millions of records sold worldwide</p>
                     <hr>
                     <?php foreach ($edSheeranSongs as $song) { ?>
                         <div class="list">
