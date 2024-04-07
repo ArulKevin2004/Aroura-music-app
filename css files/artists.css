@@ -1,0 +1,95 @@
+body {
+    color: white;
+}
+
+.list{
+    margin: 10px;
+}
+
+img {
+    margin-bottom: 20px;
+}
+
+.list > button{
+    width: 1250px;
+    font-size: 20px; 
+    text-align: left;
+    margin: 0px;
+    padding : 20px;
+    padding-left: 30px;
+    border: none;
+    border-radius: 5px;
+    background: none;
+    /* background: linear-gradient(to left, rgb(40, 40, 40), rgb(20, 20, 20) 100%); */
+}
+
+.list>button:hover{
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.song {
+    color: white;
+}
+
+.eds_page {
+    margin-left: 5px;
+    width: 95vw;
+    border-radius: 10px;
+    background-attachment: fixed;
+}
+
+.second {
+    height: 1200px;
+}
+
+img {
+    height: 300px;
+    border-radius: 20px;
+}
+
+.content {
+    margin: 40px;
+    font-family: "Roboto", sans-serif;
+}
+
+p {
+    color: grey;
+    margin-bottom: 20px;
+}
+
+h4 {
+    color: rgb(166, 166, 166);
+}
+
+#audioPlayer {
+    /* position: fixed; */
+    bottom: 20px;
+    margin-left: 100px;
+    margin-top: 10px;
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#audioPlayer audio {
+    width: 100%;
+}
+
+#audioPlayer button {
+    color: white; /* Text color */
+    background-color: transparent; /* Transparent background */
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#audioPlayer button:hover {
+    color: #ff4500; /* Change color on hover */
+}
+
+
