@@ -25,10 +25,6 @@ $anirudhSongs = array(
         .eds_page {
             background: linear-gradient(#fdb931bd ,rgba(22, 22, 22, 0.736) 70%);
         }
-
-        h4 {
-            color: rgb(166, 166, 166);
-        }
     </style>
 </head>
 <body>
