@@ -4,7 +4,8 @@ $WeekndSongs = array(
     "Starboy",
     "Save Your Tears",
     "Die For You",
-    "The Hills"
+    "The Hills",
+    "Vara Irudhi"
 );
 ?>
 
@@ -52,7 +53,12 @@ $WeekndSongs = array(
                 </div>
             </div>
             <div class="content">
-                <h1>The Weeknd</h1>
+                <div class="artist-card">
+                    <h1>The Weeknd</h1>
+                    <button class="player" onclick="playAudio()">
+                        <i class="fa-solid fa-play fa-xl"></i>
+                    </button>
+                </div>
                 <h4>The Weeknd has left a significant mark on the music industry with his distinctive voice, innovative production, and boundary-pushing style.He has earned critical acclaim and commercial success, establishing himself as one of the leading artists in contemporary R&B and pop music.The Weeknd's influence extends beyond music, as he continues to shape popular culture through his artistry, fashion, and cultural contributions.</h4>
                 <p><b>Abel Makkonen Tesfaye</b> (born February 16, 1990), known professionally as the Weeknd, is a Canadian singer and songwriter.He is known for his unconventional music production, artistic reinventions, and signature use of the falsetto register.</p>
                 <img src="images/weeknd(1).jpg">
@@ -61,8 +67,8 @@ $WeekndSongs = array(
                     <?php foreach ($WeekndSongs as $song) { ?>
                         <div class="list">
                             <button onclick="playSong('<?php echo $song; ?>')">
-                                <?php 
-                                    echo '<div class="song">'.$song.'</div>'; 
+                                <?php
+                                    echo '<div class="song">'.$song.'</div>';
                                 ?>
                             </button>
                         </div>
@@ -76,8 +82,21 @@ $WeekndSongs = array(
                 </audio>
 
                 <script>
+                    function playAudio()
+                    {
+                        var audioPlayer = document.getElementById('audioPlayer');
+                        if (audioPlayer.paused)
+                        {
+                            audioPlayer.play();
+                        }
+                        else
+                        {
+                            audioPlayer.pause();
+                        }
+                    }
                     // JavaScript function to play a song
-                    function playSong(songName) {
+                    function playSong(songName)
+                    {
                         var audioPlayer = document.getElementById('audioPlayer');
                         audioPlayer.src = 'audio/' + encodeURIComponent(songName) + '.mp3'; // Set the source of the audio player
                         audioPlayer.play(); // Play the audio
@@ -85,6 +104,6 @@ $WeekndSongs = array(
                 </script>
             </div>
         </div>
-    </div>            
+    </div>
 </body>
 </html>

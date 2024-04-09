@@ -56,7 +56,12 @@ $anirudhSongs = array(
                 </div>
             </div>
             <div class="content">
-                <h1>Anirudh Ravichander</h1>
+                <div class="artist-card">
+                    <h1>Anirudh Ravichander</h1>
+                    <button class="player" onclick="playAudio()">
+                        <i class="fa-solid fa-play fa-xl"></i>
+                    </button>
+                </div>
                 <h4>Anirudh Ravichander has made a significant impact on the Tamil music industry, introducing fresh and innovative sounds while maintaining commercial success.
 He is celebrated for his ability to blend various musical styles seamlessly, earning him a dedicated fan base and widespread acclaim.</h4>
                 <p><b>Anirudh Ravichander</b> (born 16 October 1990), also credited mononymously as Anirudh, is an Indian music composer and playback singer who works primarily in Tamil Cinema. He has also composed music for few Hindi and Telugu films. He has won two Filmfare Awards South, nine SIIMA Awards, six Edison Awards and five Vijay Awards.
@@ -82,6 +87,19 @@ His debut song "Why This Kolaveri Di", composed for the 2012 film 3, went viral 
                 </audio>
 
                 <script>
+                    function playAudio()
+                    {
+                        var audioPlayer = document.getElementById('audioPlayer');
+                        if (audioPlayer.paused)
+                        {
+                            audioPlayer.play();
+                        }
+                        else
+                        {
+                            audioPlayer.pause();
+                        }
+                    }
+
                     // JavaScript function to play a song
                     function playSong(songName) {
                         var audioPlayer = document.getElementById('audioPlayer');
