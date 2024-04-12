@@ -1,10 +1,11 @@
 <?php
-$anirudhSongs = array(
-    "Badass",
-    "Hayyoda",
-    "Why This Kolaveri Di",
-    "Dippam Dappam",
-    "Sirikkadhey"
+$alanwalkerSongs = array(
+    "End of Time",
+    "Faded",
+    "Paradise",
+    "Hello World",
+    "Catch Me If You Can",
+    "Spectre"
 );
 ?>
 
@@ -13,7 +14,7 @@ $anirudhSongs = array(
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anirudh Songs</title>
+    <title>Alan Walker Songs</title>
     <link rel="stylesheet" href="css files/common.css">
     <link rel="stylesheet" href="css files/artists.css">
     <link rel="shortcut icon" type="x-icon" href="images/music-solid.svg">
@@ -53,26 +54,23 @@ $anirudhSongs = array(
             </div>
             <div class="content">
                 <div class="artist-card">
-                    <h1>Anirudh Ravichander</h1>
+                    <h1>Alan Walker </h1>
                     <button class="player" onclick="playAudio()">
                         <i class="fa-solid fa-play fa-xl"></i>
                     </button>
                 </div>
-                <h4>Anirudh Ravichander has made a significant impact on the Tamil music industry, introducing fresh and innovative sounds while maintaining commercial success.
-He is celebrated for his ability to blend various musical styles seamlessly, earning him a dedicated fan base and widespread acclaim.</h4>
-                <p><b>Anirudh Ravichander</b> (born 16 October 1990), also credited mononymously as Anirudh, is an Indian music composer and playback singer who works primarily in Tamil Cinema. He has also composed music for few Hindi and Telugu films. He has won two Filmfare Awards South, nine SIIMA Awards, six Edison Awards and five Vijay Awards.
-His debut song "Why This Kolaveri Di", composed for the 2012 film 3, went viral across the globe and has achieved over 400 million views on YouTube.</p>
-                <img src="images/anirudh(1).jpg">
-                    <p>Genre: Film music, Pop, Electronic<br>Instruments: Vocals, Keyboard, Guitar<br>Labels: Sony Music India<br>Years Active: 2011–present<br>Filmfare Awards: Several wins and nominations<br>Edison Awards: Multiple wins and nominations<br>Mirchi Music Awards: Recognized for Best Music Director and Best Male Vocalist awards</p>
+                <h4>Alan Walker's rise to fame and continued success highlight his talent and creativity as a musician and producer. If you need more detailed information or have any specific questions about Alan Walker, feel free to ask!</h4>
+                <p><b>Alan Olav Walker </b> (born 24 August 1997) is a Norwegian DJ and music producer. At the age of 16, Walker released "Fade" on NoCopyrightSounds, which led to a contract with MER Musikk. He rose to fame with his 2015 single "Faded".Walker's debut album, Different World (2018) , features artists such as Steve Aoki, Noah Cyrus, and Digital Farm Animals, and includes "famous releases'' such as "Faded" and "new songs" such as "Lost Control." is known for its combination.</p>
+                <img src="images/Alan Walker(1).jpg">
+                    <p>Genre: Electronic, EDM (Electronic Dance Music)<br>Instruments: Digital Audio Workstation (DAW), piano<br>Labels: MER Musikk, Sony Music, RCA Records<br>Years Active: 2012-present<br>Awards: NRJ Music Awards Norge, the song "Sing Me to Sleep" won the Årets Norske Låt Norwegian Song of the Year. </p>
                     <hr>
-                    <?php foreach ($anirudhSongs as $song) { ?>
+                    <?php foreach ($alanwalkerSongs as $song) { ?>
                         <div class="list">
                             <button onclick="playSong('<?php echo $song; ?>')">
                                 <?php 
                                     echo '<div class="song">'.$song.'</div>'; 
                                 ?>
                             </button>
-                            <button><i class="fa-solid fa-heart fa-xl"></i></button>
                         </div>
                         <hr>
                     <?php } ?>
