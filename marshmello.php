@@ -52,7 +52,12 @@ $MarshmelloSongs = array(
                 </div>
             </div>
             <div class="content">
-                <h1>Marshmello</h1>
+            <div class="artist-card">
+                    <h1>Marshmello</h1>
+                    <button class="player" onclick="playAudio()">
+                        <i class="fa-solid fa-play fa-xl"></i>
+                    </button>
+                </div>
                 <h4>Marshmello's rise to fame as a masked DJ and producer has had a significant impact on the electronic music scene, inspiring other artists and reshaping the way performers engage with their audience.His catchy melodies, infectious beats, and crossover collaborations have helped him reach a broad audience and establish himself as one of the leading figures in modern EDM.</h4>
                 <p><b>Christopher Comstock</b> (born May 19, 1992), known professionally as Marshmello, is an American electronic music producer and DJ. His songs "Silence" (featuring Khalid), "Wolves" (with Selena Gomez), "Friends" (with Anne-Marie), "Happier" (with Bastille), and "Alone" have received multi-platinum certification in several countries including the US, and charted within the Top 40 of the Billboard Hot 100. His musical style includes groove-oriented, synth and bass-heavy electronic dance music.</p>
                 <img src="images/marshmello(1).png">
@@ -65,6 +70,7 @@ $MarshmelloSongs = array(
                                     echo '<div class="song">'.$song.'</div>'; 
                                 ?>
                             </button>
+                            <button><i class="fa-solid fa-heart fa-xl"></i></button>
                         </div>
                         <hr>
                     <?php } ?>
@@ -76,6 +82,19 @@ $MarshmelloSongs = array(
                 </audio>
 
                 <script>
+                    function playAudio()
+                    {
+                        var audioPlayer = document.getElementById('audioPlayer');
+                        if (audioPlayer.paused)
+                        {
+                            audioPlayer.play();
+                        }
+                        else
+                        {
+                            audioPlayer.pause();
+                        }
+                    }
+
                     // JavaScript function to play a song
                     function playSong(songName) {
                         var audioPlayer = document.getElementById('audioPlayer');

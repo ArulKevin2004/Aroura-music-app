@@ -52,7 +52,13 @@ $edSheeranSongs = array(
                 </div>
             </div>
             <div class="content">
-                <h1>Ed Sheeran</h1>
+                <div class="artist-card">
+                    <h1>Ed Sheeran</h1>
+                    <button class="player" onclick="playAudio()">
+                        <i class="fa-solid fa-play fa-xl"></i>
+                    </button>
+                    <button><i class="fa-solid fa-heart fa-xl"></i></button>
+                </div>
                 <h4>Ed Sheeran's music has had a significant impact on the pop music landscape, with his soulful voice, heartfelt lyrics, and relatable songs resonating with audiences worldwide.
 He is regarded as one of the most successful and influential artists of his generation, leaving a lasting legacy in the music industry.</h4>
                 <p><b>Edward Christopher Sheeran</b> MBE (born 17 February 1991) is an English singer-songwriter. Born in Halifax, West Yorkshire, and raised in Framlingham, Suffolk, he began writing songs around the age of eleven. In early 2011, Sheeran independently released the extended play No. 5 Collaborations Project. He signed with Asylum Records the same year.
@@ -79,6 +85,19 @@ Sheeran's debut album, + ("Plus"), was released in September 2011 and topped the
                 </audio>
 
                 <script>
+                    function playAudio()
+                    {
+                        var audioPlayer = document.getElementById('audioPlayer');
+                        if (audioPlayer.paused)
+                        {
+                            audioPlayer.play();
+                        }
+                        else
+                        {
+                            audioPlayer.pause();
+                        }
+                    }
+
                     // JavaScript function to play a song
                     function playSong(songName) {
                         var audioPlayer = document.getElementById('audioPlayer');

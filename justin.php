@@ -52,7 +52,12 @@ $JustinSongs = array(
                 </div>
             </div>
             <div class="content">
-                <h1>Justin Bieber</h1>
+            <div class="artist-card">
+                    <h1>Justin Bieber</h1>
+                    <button class="player" onclick="playAudio()">
+                        <i class="fa-solid fa-play fa-xl"></i>
+                    </button>
+                </div>
                 <h4>The Justin has left a significant mark on the music industry with his distinctive voice, innovative production, and boundary-pushing style.He has earned critical acclaim and commercial success, establishing himself as one of the leading artists in contemporary R&B and pop music.The Justin's influence extends beyond music, as he continues to shape popular culture through his artistry, fashion, and cultural contributions.</h4>
                 <p><b>Justin Drew Bieber</b> (born March 1, 1994)is a Canadian singer. Regarded as a pop icon, he is recognized for his multi-genre musical performances.He was discovered by American record executive Scooter Braun in 2008 and subsequently brought to American singer Usher, both of whom formed the record label RBMG Records to sign Bieber in October of that year. He gained recognition following the release of his debut extended play (EP) My World (2009), which was quickly met with international commercial success and led to his establishment as a prominent teen idol.</p>
                 <img src="images/justin(1).jpeg">
@@ -65,6 +70,7 @@ $JustinSongs = array(
                                     echo '<div class="song">'.$song.'</div>'; 
                                 ?>
                             </button>
+                            <button><i class="fa-solid fa-heart fa-xl"></i></button>
                         </div>
                         <hr>
                     <?php } ?>
@@ -76,6 +82,19 @@ $JustinSongs = array(
                 </audio>
 
                 <script>
+                    function playAudio()
+                    {
+                        var audioPlayer = document.getElementById('audioPlayer');
+                        if (audioPlayer.paused)
+                        {
+                            audioPlayer.play();
+                        }
+                        else
+                        {
+                            audioPlayer.pause();
+                        }
+                    }
+
                     // JavaScript function to play a song
                     function playSong(songName) {
                         var audioPlayer = document.getElementById('audioPlayer');

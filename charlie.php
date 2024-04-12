@@ -52,7 +52,12 @@ $CharlieSongs = array(
                 </div>
             </div>
             <div class="content">
-                <h1>Charlie Puth</h1>
+                <div class="artist-card">
+                    <h1>Charlie Puth</h1>
+                    <button class="player" onclick="playAudio()">
+                        <i class="fa-solid fa-play fa-xl"></i>
+                    </button>
+                </div>
                 <h4>Charlie Puth has established himself as a prominent figure in the pop music industry, known for his soulful voice, catchy melodies, and emotional lyrics.He has achieved commercial success with multiple chart-topping singles and albums, contributing to the contemporary pop music landscape with his distinctive style and sound.</h4>
                 <p><b>Charles Otto Puth Jr.</b> (born December 2, 1991) is an American singer, songwriter, and record producer. His initial exposure came through the viral success of his song covers uploaded to YouTube. Puth signed with the record label eleveneleven in 2011 after performing on The Ellen DeGeneres Show, while also songwriting and producing material for other artists.Puth eventually signed to Atlantic Records and Artist Partner Group to release his debut single, "Marvin Gaye" (featuring Meghan Trainor) in 2015.</p>
                 <img src="images/charlie(1).jpg">
@@ -65,6 +70,7 @@ $CharlieSongs = array(
                                     echo '<div class="song">'.$song.'</div>'; 
                                 ?>
                             </button>
+                            <button><i class="fa-solid fa-heart fa-xl"></i></button>
                         </div>
                         <hr>
                     <?php } ?>
@@ -76,6 +82,19 @@ $CharlieSongs = array(
                 </audio>
 
                 <script>
+                    function playAudio()
+                    {
+                        var audioPlayer = document.getElementById('audioPlayer');
+                        if (audioPlayer.paused)
+                        {
+                            audioPlayer.play();
+                        }
+                        else
+                        {
+                            audioPlayer.pause();
+                        }
+                    }
+
                     // JavaScript function to play a song
                     function playSong(songName) {
                         var audioPlayer = document.getElementById('audioPlayer');

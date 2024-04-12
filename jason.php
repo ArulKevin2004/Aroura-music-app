@@ -52,7 +52,12 @@ $JasonSongs = array(
                 </div>
             </div>
             <div class="content">
-                <h1>Jason Derulo</h1>
+                <div class="artist-card">
+                    <h1>Jason Derulo</h1>
+                    <button class="player" onclick="playAudio()">
+                        <i class="fa-solid fa-play fa-xl"></i>
+                    </button>
+                </div>
                 <h4>Jason Derulo has established himself as a versatile artist, known for his catchy hooks, danceable beats, and smooth vocals.
 He has achieved commercial success with multiple chart-topping singles and albums, contributing to the pop music landscape with his unique style and performances.</h4>
                 <p><b>Jason Joel Desrouleaux</b> (born September 21, 1989), known professionally as Jason Derulo, is an American singer and songwriter. Since the start of his solo recording career in 2009, he has sold over 250 million singles worldwide and has achieved eleven platinum singles including "Wiggle", "Talk Dirty", "Want to Want Me", "Trumpets", "It Girl", "In My Head", "Ridin' Solo", and "Whatcha Say".</p>
@@ -66,6 +71,7 @@ He has achieved commercial success with multiple chart-topping singles and album
                                     echo '<div class="song">'.$song.'</div>'; 
                                 ?>
                             </button>
+                            <button><i class="fa-solid fa-heart fa-xl"></i></button>
                         </div>
                         <hr>
                     <?php } ?>
@@ -77,6 +83,19 @@ He has achieved commercial success with multiple chart-topping singles and album
                 </audio>
 
                 <script>
+                    function playAudio()
+                    {
+                        var audioPlayer = document.getElementById('audioPlayer');
+                        if (audioPlayer.paused)
+                        {
+                            audioPlayer.play();
+                        }
+                        else
+                        {
+                            audioPlayer.pause();
+                        }
+                    }
+
                     // JavaScript function to play a song
                     function playSong(songName) {
                         var audioPlayer = document.getElementById('audioPlayer');
