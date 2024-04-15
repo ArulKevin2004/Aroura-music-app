@@ -71,6 +71,7 @@ $alanwalkerSongs = array(
                                     echo '<div class="song">'.$song.'</div>'; 
                                 ?>
                             </button>
+                            <button><i class="fa-solid fa-heart fa-xl"></i></button>
                         </div>
                         <hr>
                     <?php } ?>
