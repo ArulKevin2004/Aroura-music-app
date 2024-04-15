@@ -69,7 +69,10 @@ $alanwalkerSongs = array(
                             <button onclick="playSong('<?php echo $song; ?>')">
                                 <?php 
                                     echo '<div class="song">'.$song.'</div>'; 
-                                ?>
+                                    ?>
+                            </button>
+                            <button onclick="addToFavorites('<?php echo $song; ?>')">
+                                <i class="fa-solid fa-heart fa-xl"></i>
                             </button>
                         </div>
                         <hr>

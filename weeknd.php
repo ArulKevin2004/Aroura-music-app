@@ -28,7 +28,7 @@ $WeekndSongs = array(
         }
     </style>
 </head>
-<body>
+<body> 
     <div class="eve">
         <div>
             <div class="first">
@@ -53,6 +53,7 @@ $WeekndSongs = array(
                 </div>
             </div>
             <div class="content">
+                
                 <div class="artist-card">
                     <h1>The Weeknd</h1>
                     <button class="player" onclick="playAudio()">
@@ -71,7 +72,13 @@ $WeekndSongs = array(
                                     echo '<div class="song">'.$song.'</div>';
                                 ?>
                             </button>
-                            <button><i class="fa-solid fa-heart fa-xl"></i></button>
+                            <form action="add_to_fav.php" method="post" name="form" id= "form"
+                            onsubmit = "addToFavorites('<?php echo $song; ?>')" target="_blank">
+                                <input type="text" name="fav" id="fav" hidden>
+                                <button>
+                                    <i class="fa-solid fa-heart fa-xl"></i>
+                                </button>
+                             </form>
                         </div>
                         <hr>
                     <?php } ?>
@@ -102,6 +109,22 @@ $WeekndSongs = array(
                         audioPlayer.src = 'audio/' + encodeURIComponent(songName) + '.mp3'; // Set the source of the audio player
                         audioPlayer.play(); // Play the audio
                     }
+
+                    function addToFavorites(songName) {
+                        document.getElementById("fav").value = songName; 
+                        // var xhr = new XMLHttpRequest();
+                        // xhr.open('POST', 'add_to_fav.php');
+                        // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                        // xhr.onload = function() {
+                        //     if (xhr.status === 200) {
+                        //         console.log('Song added to favorites');
+                        //     } else {
+                        //         console.log('Error adding song to favorites');
+                        //     }
+                        // };
+                        // xhr.send('songName=' + encodeURIComponent(songName));
+                    }
+
                 </script>
             </div>
         </div>
