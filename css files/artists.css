@@ -14,6 +14,7 @@ body {
         &:hover{
             background: none;
             color : #1BE1FF;
+            cursor: pointer;
         }
     }
 }

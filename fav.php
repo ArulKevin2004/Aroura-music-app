@@ -29,8 +29,6 @@
         while ($row = $result->fetch_assoc()) {
             array_push($Favsongs, $row["song_name"]);
         }
-    } else {
-        echo "0 results";
     }
 
     $conn->close();
@@ -52,8 +50,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <style>
         .eds_page {
-            background: linear-gradient(#422419,rgba(22, 22, 22, 0.736) 70%);
+            background: linear-gradient(#76030e,rgba(22, 22, 22, 0.736) 50%);
         }
+        img {
+            margin: 50px 10px;
+        }
+        h1 {
+            margin-left: 20px;
+        }
+
+        .remove{
+            color: white;
+            background: none;
+            border: none;
+            transition: .5s;
+        }
+
+        .remove:hover {
+            background: none;
+            color : #1BE1FF;
+            cursor: pointer;
+        }
+        
     </style>
 </head>
 <body> 
@@ -68,8 +86,12 @@
                 </button>
             </div>
             <div class="second">
-                <i class="fa-solid fa-bars-staggered fa-xl"></i>
-                <i class="fa-solid fa-heart fa-xl"></i>
+                <button>
+                    <i class="fa-solid fa-bars-staggered fa-2xl"></i>
+                </button>
+                <button onclick="location.href='fav.php'">
+                    <i class="fa-solid fa-heart fa-2xl"></i>
+                </button>
             </div>
         </div>
         <div class="eds_page">
@@ -88,7 +110,7 @@
                         <i class="fa-solid fa-play fa-xl"></i>
                     </button>
                 </div>
-                <img src="images/weeknd(1).jpg">
+                <img src="images/favourites(1).jpeg">
                     <hr>
                     <?php foreach ($Favsongs as $song) { ?>
                         <div class="list">
@@ -97,11 +119,11 @@
                                     echo '<div class="song">'.$song.'</div>';
                                 ?>
                             </button>
-                            <form action="add_to_fav.php" method="post" name="form" id= "<?php echo $song."id"?>"
+                            <form action="rem_from_fav.php" method="post" name="form" id= "<?php echo $song."id"?>"
                             onsubmit = "addToFavorites('<?php echo $song; ?>')" target="_blank">
                                 <input type="text" name="fav" id="fav" hidden>
-                                <button name="fav_btn" value="<?php echo $song ?>">
-                                    <i class="fa-solid fa-heart fa-xl"></i>
+                                <button class="remove" name="rem_btn" value="<?php echo $song ?>">
+                                    <i class="fa-solid fa-circle-minus fa-2xl"></i>
                                 </button>
                              </form>
                         </div>

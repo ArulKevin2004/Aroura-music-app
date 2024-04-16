@@ -39,8 +39,12 @@ $CharlieSongs = array(
                 </button>
             </div>
             <div class="second">
-                <i class="fa-solid fa-bars-staggered fa-xl"></i>
-                <i class="fa-solid fa-heart fa-xl"></i>
+                <button>
+                    <i class="fa-solid fa-bars-staggered fa-2xl"></i>
+                </button>
+                <button onclick="location.href='fav.php'">
+                    <i class="fa-solid fa-heart fa-2xl"></i>
+                </button>
             </div>
         </div>
         <div class="eds_page">
@@ -66,11 +70,17 @@ $CharlieSongs = array(
                     <?php foreach ($CharlieSongs as $song) { ?>
                         <div class="list">
                             <button onclick="playSong('<?php echo $song; ?>')">
-                                <?php 
-                                    echo '<div class="song">'.$song.'</div>'; 
+                                <?php
+                                    echo '<div class="song">'.$song.'</div>';
                                 ?>
                             </button>
-                            <button><i class="fa-solid fa-heart fa-xl"></i></button>
+                            <form action="add_to_fav.php" method="post" name="form" id= "<?php echo $song."id"?>"
+                            onsubmit = "addToFavorites('<?php echo $song; ?>')" target="_blank">
+                                <input type="text" name="fav" id="fav" hidden>
+                                <button name="fav_btn" value="<?php echo $song ?>">
+                                    <i class="fa-solid fa-heart fa-xl"></i>
+                                </button>
+                             </form>
                         </div>
                         <hr>
                     <?php } ?>

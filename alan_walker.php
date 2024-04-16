@@ -1,10 +1,9 @@
 <?php
 $alanwalkerSongs = array(
-    "End of Time",
+    "End Of Time",
     "Faded",
     "Paradise",
     "Hello World",
-    "Catch Me If You Can",
     "Spectre"
 );
 ?>
@@ -24,7 +23,7 @@ $alanwalkerSongs = array(
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <style>
         .eds_page {
-            background: linear-gradient(#fdb931bd ,rgba(22, 22, 22, 0.736) 70%);
+            background: linear-gradient(#206268,rgba(22, 22, 22, 0.736) 70%);
         }
     </style>
 </head>
@@ -40,8 +39,12 @@ $alanwalkerSongs = array(
                 </button>
             </div>
             <div class="second">
-                <i class="fa-solid fa-bars-staggered fa-xl"></i>
-                <i class="fa-solid fa-heart fa-xl"></i>
+                <button>
+                    <i class="fa-solid fa-bars-staggered fa-2xl"></i>
+                </button>
+                <button onclick="location.href='fav.php'">
+                    <i class="fa-solid fa-heart fa-2xl"></i>
+                </button>
             </div>
         </div>
         <div class="eds_page">
@@ -67,14 +70,17 @@ $alanwalkerSongs = array(
                     <?php foreach ($alanwalkerSongs as $song) { ?>
                         <div class="list">
                             <button onclick="playSong('<?php echo $song; ?>')">
-                                <?php 
-                                    echo '<div class="song">'.$song.'</div>'; 
-                                    ?>
+                                <?php
+                                    echo '<div class="song">'.$song.'</div>';
+                                ?>
                             </button>
-                            <button onclick="addToFavorites('<?php echo $song; ?>')">
-                                <i class="fa-solid fa-heart fa-xl"></i>
-                            </button>
-                            <button><i class="fa-solid fa-heart fa-xl"></i></button>
+                            <form action="add_to_fav.php" method="post" name="form" id= "<?php echo $song."id"?>"
+                            onsubmit = "addToFavorites('<?php echo $song; ?>')" target="_blank">
+                                <input type="text" name="fav" id="fav" hidden>
+                                <button name="fav_btn" value="<?php echo $song ?>">
+                                    <i class="fa-solid fa-heart fa-xl"></i>
+                                </button>
+                             </form>
                         </div>
                         <hr>
                     <?php } ?>

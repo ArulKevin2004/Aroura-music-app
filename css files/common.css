@@ -37,13 +37,16 @@ body {
     margin-top: 5px;
 }
 
-.second > i {
-    margin-left: 16px;
-    margin-bottom: 40px;
-    transition : color .5s;
+.second > button {
+    background-color: rgb(22, 22, 22);
+    color: white;
+    border: none;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    transition: color .25s;
 }
 
-.second > i:hover {
+.second > button:hover {
     color: #6400CE;
     cursor: pointer;
 }
