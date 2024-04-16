@@ -8,16 +8,21 @@
 
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        print_r($_POST)
-        // Get the song name from the AJAX request
-        // $song_name = $_POST['songName'];
+        $fav_song = $_POST["fav_btn"];
 
-        // Insert the song name into the favorites table
-        // $sql = "INSERT INTO favorites(user_id, song_name) VALUES (?, ?)";
-        // $stmt = $pdo->prepare($sql);
-        // $stmt->execute([$song_name, $user_id]);
 
-        // // Send response back to JavaScript
-        // http_response_code(200);
+        $asql = "SELECT uid FROM curr_login ORDER BY activity_time DESC LIMIT 1";
+        $r = $conn->query($asql);
+        $row = $r->fetch_assoc();
+
+        $user_id = $row['uid'];
+        
+        $sql = "INSERT INTO favorites (user_id,song_name) VALUES ('$user_id','$fav_song')";
+
+        if ($conn->query($sql)){
+            echo "FAV ADDED";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
     }
 ?>

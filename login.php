@@ -23,7 +23,9 @@
             // User found, check password
             $row = $result->fetch_assoc();
             $password = $_POST['password'];
+            $uid = $row['id'];
             if ($row['password'] == $password) {
+                $conn->query("INSERT INTO curr_login (uid) VALUES ('$uid')");
                 // Password correct, redirect user to dashboard or desired page
                 header("Location: main.html"); // Change this to the page you want to redirect to after login
                 exit();

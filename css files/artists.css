@@ -5,8 +5,10 @@ body {
 .list{
     margin: 10px;
     display: flex;
-    button:nth-child(2){
+    [name="fav_btn"]{
         color: white;
+        background: none;
+        border: none;
         width: 4em;
         transition: .5s;
         &:hover{

@@ -15,6 +15,7 @@
         // Create connection
         $conn = new mysqli($servername, $username, $password, $database);
 
+
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -27,7 +28,6 @@
             echo "Username already exists";
             exit();
         }
-        echo "Done";
         $password = $_POST['password'];
         // SQL query to insert the user into the database
         $sql = "INSERT INTO users (email,username, password) VALUES ('$email_username','$email_username', '$password')";
@@ -38,6 +38,8 @@
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
+
+        
 
         // Close connection
         $conn->close();

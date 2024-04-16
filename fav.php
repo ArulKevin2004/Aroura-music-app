@@ -1,20 +1,48 @@
 <?php
-$WeekndSongs = array(
-    "Blinding Lights",
-    "Starboy",
-    "Save Your Tears",
-    "Die For You",
-    "The Hills",
-    "Vara Irudhi"
-);
+
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Database connection settings
+    $servername = "localhost"; // Change this to your database server name
+    $username = "root"; // Change this to your database username
+    $password = ""; // Change this to your database password
+    $database = "Aroura_db"; // Change this to your database name
+
+
+    $conn = new mysqli($servername, $username, $password, $database);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $asql = "SELECT uid FROM curr_login ORDER BY activity_time DESC LIMIT 1";
+    $r = $conn->query($asql);
+    $row = $r->fetch_assoc();
+
+    $user_id = $row['uid'];
+
+    $sql = "SELECT song_name FROM favorites WHERE user_id = $user_id";
+
+    $result = $conn->query($sql);
+    $Favsongs = array();
+    if ($result->num_rows > 0) {
+        // Output data of each row
+        while ($row = $result->fetch_assoc()) {
+            array_push($Favsongs, $row["song_name"]);
+        }
+    } else {
+        echo "0 results";
+    }
+
+    $conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Weeknd songs</title>
+    <title>Favourites</title>
     <link rel="stylesheet" href="css files/common.css">
     <link rel="stylesheet" href="css files/artists.css">
     <link rel="shortcut icon" type="x-icon" href="images/music-solid.svg">
@@ -55,17 +83,14 @@ $WeekndSongs = array(
             <div class="content">
                 
                 <div class="artist-card">
-                    <h1>The Weeknd</h1>
+                    <h1>Favourites</h1>
                     <button class="player" onclick="playAudio()">
                         <i class="fa-solid fa-play fa-xl"></i>
                     </button>
                 </div>
-                <h4>The Weeknd has left a significant mark on the music industry with his distinctive voice, innovative production, and boundary-pushing style.He has earned critical acclaim and commercial success, establishing himself as one of the leading artists in contemporary R&B and pop music.The Weeknd's influence extends beyond music, as he continues to shape popular culture through his artistry, fashion, and cultural contributions.</h4>
-                <p><b>Abel Makkonen Tesfaye</b> (born February 16, 1990), known professionally as the Weeknd, is a Canadian singer and songwriter.He is known for his unconventional music production, artistic reinventions, and signature use of the falsetto register.</p>
                 <img src="images/weeknd(1).jpg">
-                    <p>Genre: R&B, pop, alternative<br>Instruments: Vocals<br>Labels: XO, Republic<br>Years Active: 2010–present<br>Grammy Award winner and nominee<br>Billboard Music Awards winner and nominee<br>Juno Awards winner and nominee (Canadian music awards)<br>MTV Video Music Awards winner and nominee<br>American Music Awards winner and nominee</p>
                     <hr>
-                    <?php foreach ($WeekndSongs as $song) { ?>
+                    <?php foreach ($Favsongs as $song) { ?>
                         <div class="list">
                             <button onclick="playSong('<?php echo $song; ?>')">
                                 <?php
