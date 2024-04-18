@@ -1,10 +1,6 @@
 <?php
-$JustinSongs = array(
-    "Stay",
-    "Love Yourself",
-    "Ghost",
-    "Sorry",  
-    "Intentions"
+$TrendingSongs = array(
+    "5G"
 );
 ?>
 
@@ -13,7 +9,7 @@ $JustinSongs = array(
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Justin Bieber songs</title>
+    <title>Trending Hits</title>
     <link rel="stylesheet" href="css files/common.css">
     <link rel="stylesheet" href="css files/artists.css">
     <link rel="shortcut icon" type="x-icon" href="images/music-solid.svg">
@@ -57,17 +53,15 @@ $JustinSongs = array(
             </div>
             <div class="content">
             <div class="artist-card">
-                    <h1>Justin Bieber</h1>
+                    <h1>Trending Hits</h1>
                     <button class="player" onclick="playAudio()">
                         <i class="fa-solid fa-play fa-xl"></i>
                     </button>
                 </div>
-                <h4>The Justin has left a significant mark on the music industry with his distinctive voice, innovative production, and boundary-pushing style.He has earned critical acclaim and commercial success, establishing himself as one of the leading artists in contemporary R&B and pop music.The Justin's influence extends beyond music, as he continues to shape popular culture through his artistry, fashion, and cultural contributions.</h4>
-                <p><b>Justin Drew Bieber</b> (born March 1, 1994)is a Canadian singer. Regarded as a pop icon, he is recognized for his multi-genre musical performances.He was discovered by American record executive Scooter Braun in 2008 and subsequently brought to American singer Usher, both of whom formed the record label RBMG Records to sign Bieber in October of that year. He gained recognition following the release of his debut extended play (EP) My World (2009), which was quickly met with international commercial success and led to his establishment as a prominent teen idol.</p>
+                <h4>Top Trends Around The World</h4>
                 <img src="images/justin(1).jpeg">
-                    <p>Genre: Pop, R&B<br>Instruments: Vocals, guitar, drums, piano<br>Labels: RBMG, Def Jam<br>Years Active: 2008–present<br>Grammy Award winner and nominee<br>Billboard Music Awards winner and nominee<br>MTV Video Music Awards winner and nominee<br>American Music Awards winner and nominee<br>Juno Awards winner and nominee (Canadian music awards)</p>
                     <hr>
-                    <?php foreach ($JustinSongs as $song) { ?>
+                    <?php foreach ($TrendingSongs as $song) { ?>
                         <div class="list">
                             <button onclick="playSong('<?php echo $song; ?>')">
                                 <?php

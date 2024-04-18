@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         if ($conn->query($sql)) {
             // Show success message in an alert box
-            echo "<script>alert('FAV ADDED');</script>";
+            echo "<script>alert('Song Added to Favourites!');</script>";
             // header("Location: fav.php");
         } else {
             // Show error message in an alert box

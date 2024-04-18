@@ -59,6 +59,16 @@
             margin-left: 20px;
         }
 
+        .more {
+            transition: 0.2s;
+        }
+
+        .more:hover {
+            text-decoration: underline;
+            color: white;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
         .remove{
             color: white;
             background: none;
@@ -136,6 +146,7 @@
                     Your browser does not support the audio element.
                 </audio>
 
+                <p class="more" onclick="location.href='search.html'">Add More to Favourites >></p>
                 <script>
                     function playAudio()
                     {

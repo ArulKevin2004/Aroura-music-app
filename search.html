@@ -1,65 +1,198 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Aurora</title>
     <link rel="shortcut icon" type="x-icon" href="images/music-solid.svg" />
     <link rel="stylesheet" href="css files/common.css" />
     <link rel="stylesheet" href="css files/search.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="eve">
-      <div>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div class="eve">
+    <div>
         <div class="first">
-          <button type="button" onclick="location.href='main.html'">
-            <i class="fa-solid fa-house fa-2xl"></i>
-          </button>
-          <button type="button" onclick="location.href='search.html'">
-            <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
-          </button>
+            <button type="button" onclick="location.href='main.html'">
+                <i class="fa-solid fa-house fa-2xl"></i>
+            </button>
+            <button type="button" onclick="location.href='search.html'">
+                <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
+            </button>
         </div>
         <div class="second">
-          <button>
-            <i class="fa-solid fa-bars-staggered fa-2xl"></i>
-          </button>
-          <button onclick="location.href='fav.php'">
-            <i class="fa-solid fa-heart fa-2xl"></i>
-          </button>
-        </div>
-      </div>
-      <div class="main_search">
-        <div class="top">
-					<div>
-            <button onclick="location.href='main.html'">
-              <i class="fa-solid fa-arrow-left fa-lg"></i>
-            </button>
             <button>
-              <i class="fa-solid fa-arrow-right fa-lg"></i>
+                <i class="fa-solid fa-bars-staggered fa-2xl"></i>
             </button>
-					</div>
-          <div class="search_box">
-						<span class="fa-solid fa-magnifying-glass fa-lg"></span>
-            <input type="text" name="search" id="search" placeholder="What do you want to listen to?" />
-          </div>
-          <div>
-            <button>
-              <i class="fa-regular fa-bell fa-lg"></i>
+            <button onclick="location.href='fav.php'">
+                <i class="fa-solid fa-heart fa-2xl"></i>
             </button>
-            <button onclick="location.href='login.html'">
-              <i class="fa-solid fa-user fa-lg"></i>
-            </button>
-          </div>
         </div>
-      </div>
     </div>
-  </body>
+    <div class="main_search">
+        <div class="top">
+            <div>
+                <button onclick="location.href='main.html'">
+                    <i class="fa-solid fa-arrow-left fa-lg"></i>
+                </button>
+                <button>
+                    <i class="fa-solid fa-arrow-right fa-lg"></i>
+                </button>
+            </div>
+            <div class="search_box">
+                <span class="fa-solid fa-magnifying-glass fa-lg"></span>
+                <input type="text" name="search" id="search" placeholder="What do you want to listen to?" />
+            </div>
+            <div>
+                <button>
+                    <i class="fa-regular fa-bell fa-lg"></i>
+                </button>
+                <button onclick="location.href='login.html'">
+                    <i class="fa-solid fa-user fa-lg"></i>
+                </button>
+            </div>
+        </div>
+        <div class="search-results">
+        </div>
+    </div>
+</div>
+
+<script>
+    var allSongs = [
+
+        { name: "Fein", url: "/play.php?song=Fein" },
+        { name: "5G", url: "/play.php?song=5G" },
+        { name: "Valayapatti", url: "/play.php?song=Valayapatti" },
+        { name: "Infinity", url: "/play.php?song=Infinity" },
+        { name: "Idhu Varai", url: "/play.php?song=Idhu Varai" },
+        { name: "Kannodu Kaanberallam", url: "/play.php?song=Kannodu Kaanberallam" },
+        { name: "Maroon", url: "/play.php?song=Maroon" },
+        { name: "Midnight Rain", url: "/play.php?song=Midnight Rain" },
+        { name: "Paris", url: "/play.php?song=Paris" },
+        { name: "En Aasai Maithiliye", url: "/play.php?song=En Aasai Maithiliye" },
+        { name: "Devathayai Kanden", url: "/play.php?song=Devathayai Kanden" },
+        { name: "Nalo Chilipi Kala", url: "/play.php?song=Nalo Chilipi Kala" },
+        { name: "Janam Janam", url: "/play.php?song=Janam Janam" },
+        { name: "Gerua", url: "/play.php?song=Gerua" },
+        { name: "Usurae Poguthey", url: "/play.php?song=Usurae Poguthey" },
+        { name: "Nuestra cancion", url: "/play.php?song=Nuestra cancion" },
+        { name: "Jab Tak Jahaan", url: "/play.php?song=Jab Tak Jahaan" },
+        { name: "Once Upon a Time", url: "/play.php?song=Once Upon a Time" },
+        { name: "Senorita", url: "/play.php?song=Senorita" },
+        { name: "Hypochonriac", url: "/play.php?song=Hypochonriac" },
+        { name: "Love Me Back(Fayahh Beat)", url: "/play.php?song=Love Me Back(Fayahh Beat)" },
+        { name: "Sad Girlz Luv Money", url: "/play.php?song=Sad Gurlz Luv Money" },
+        { name: "Husn", url: "/play.php?song=Husn" },
+        { name: "Stereo", url: "/play.php?song=Stereo" },
+        { name: "Hope", url: "/play.php?song=Hope" },
+        { name: "zzz", url: "/play.php?song=zzz" },
+
+
+
+        { name: "Blinding Lights", url: "/weeknd.php" },
+        { name: "Shape of You", url: "/ed_sheeran.php" },
+        { name: "We Dont Talk Anymore", url: "/charlie.php" },
+        { name: "Light Switch", url: "/charlie.php" },
+        { name: "Starboy", url: "/weeknd.php" },
+        { name: "Die For You", url: "/weeknd.php" },
+        { name: "Savage Love", url: "/jason.php" },
+        { name: "Why This Kolaveri Di", url: "/anirudh.php" },
+        { name: "The Hills", url: "/weeknd.php" },
+        { name: "Vara Irudhi", url: "/weeknd.php" },
+        { name: "I Dont Care", url: "/ed_sheeran.php" },
+        { name: "Save Your Tears", url: "/weeknd.php" },
+        { name: "Beautiful People", url: "/ed_sheeran.php" },
+        { name: "Photograph", url: "/ed_sheeran.php" },
+        { name: "Badass", url: "/anirudh.php" },
+        { name: "Hayyoda", url: "/anirudh.php" },
+        { name: "Perfect", url: "/ed_sheeran.php" },
+        { name: "Dippam Dappam", url: "/anirudh.php" },
+        { name: "Sirikkadhey", url: "/anirudh.php" },
+        { name: "See You Again", url: "/charlie.php" },
+        { name: "Attention", url: "/charlie.php" },
+        { name: "Left and Right", url: "/charlie.php" },
+        { name: "Take You Dancing", url: "/jason.php" },
+        { name: "Jalebi Baby", url: "/jason.php" },
+        { name: "1,2,3", url: "/jason.php" },
+        { name: "Swalla", url: "/jason.php" },
+        { name: "Love Yourself", url: "/justin.php" },
+        { name: "Ghost", url: "/justin.php" },
+        { name: "Sorry", url: "/justin.php" },
+        { name: "Intentions", url: "/justin.php" },
+        { name: "Stay", url: "/justin.php" },
+        { name: "Happier", url: "/marshmello.php" },
+        { name: "Silence", url: "/marshmello.php" },
+        { name: "Friends", url: "/marshmello.php" },
+        { name: "Wolves", url: "/marshmello.php" },
+        { name: "Alone", url: "/marshmello.php" },
+        { name: "End Of Time", url: "/alan_walker.php" },
+        { name: "Faded", url: "/alan_walker.php" },
+        { name: "Paradise", url: "/alan_walker.php" },
+        { name: "Hello World", url: "/alan_walker.php" },
+        { name: "Spectre", url: "/alan_walker.php" },
+        { name: "Enchanted", url: "/taylor.php" },
+        { name: "Love Story", url: "/taylor.php" },
+        { name: "Shake It Off", url: "/taylor.php" },
+        { name: "Anti-Hero", url: "/taylor.php" },
+        { name: "Blank Space", url: "/taylor.php" },
+        { name: "Lover", url: "/taylor.php" },
+        { name: "Before You Go", url: "/lewis.php" },
+        { name: "Bruises", url: "/lewis.php" },
+        { name: "Someone You Loved", url: "/lewis.php" },
+        { name: "Artist : Alan Walker", url: "/alan_walker.php" },
+        { name: "Artist : Anirudh Ravichander", url: "/anirudh.php" },
+        { name: "Artist : Charlie Puth", url: "/charlie.php" },
+        { name: "Artist : Ed Sheeran", url: "/ed_sheeran.php" },
+        { name: "Artist : Jason Derulo", url: "/jason.php" },
+        { name: "Artist : Justin Bieber", url: "/justin.php" },
+        { name: "Artist : Lewis Capaldi", url: "/lewis.php" },
+        { name: "Artist : Marshmello", url: "/marshmello.php" },
+        { name: "Artist : Taylor Swift", url: "/taylor.php" },
+        { name: "Artist : The Weeknd", url: "/weeknd.php" }
+
+    ];
+
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    const searchInput = document.getElementById('search');
+    const searchResults = document.querySelector('.search-results');
+
+  
+
+    const searchSongs = debounce(() => {
+        // console.log("Hi");
+        const input = searchInput.value.toLowerCase();
+        const matches = allSongs.filter(song => song.name.toLowerCase().includes(input));
+        displaySearchResults(matches);
+    }, 300);
+
+    function displaySearchResults(matches) {
+      // console.log('matches' , matches);
+        searchResults.innerHTML = '';
+        matches.forEach(match => {
+            // const div = document.createElement('div');
+            // div.textContent = match;
+            // searchResults.appendChild(div);
+            let song = `<button class="search-ele" onclick="location.href='${match.url}'">${match.name}</button>` 
+
+            // <button class="search-ele" onclick="location.href='play.php?song=<?php echo urlencode($match->name); ?>'"><?php echo $match->name; ?></button>
+            document.querySelector(".search-results").innerHTML += song + "<br>";
+        });
+    }
+
+    searchInput.addEventListener('keyup', searchSongs);
+</script>
+
+</body>
 </html>

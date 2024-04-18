@@ -37,6 +37,27 @@
             color: cyan;
         }
     }
+}
 
-    
+.search-results{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.search-ele {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.393);
+    border: none;
+    border-radius: 20px;
+    font-size: 25px;
+    padding: 20px;
+    margin: 0px 20px;
+    margin-left: 35px;
+    width: 1288px;
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.213);
+        cursor: pointer;
+    }
 }
