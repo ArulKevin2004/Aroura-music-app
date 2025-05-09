@@ -4,5 +4,3 @@ Follow these steps to run the website,
 - Navigate to the Root directory of the app in the Command line
 - Run `php -S localhost:8000`
 - Open `localhost:8000/login.html` in your Web browser
-
-- 
